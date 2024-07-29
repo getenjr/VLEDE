@@ -109,9 +109,9 @@ jobs:
 
           # 编译x64固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_brcm2708=y
-          CONFIG_TARGET_brcm2708_bcm2710=y
-          CONFIG_TARGET_brcm2708_bcm2710_DEVICE_rpi-3=y
+          CONFIG_TARGET_armsr=y
+          CONFIG_TARGET_armsr_armv8=y
+          CONFIG_TARGET_armsr_armv8_DEVICE_generic=y
           EOF
 
           # 固件压缩:
@@ -137,7 +137,7 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-nfs-v3=y
           CONFIG_PACKAGE_kmod-fs-nfs-v4=y
           CONFIG_PACKAGE_kmod-fs-ntfs=y
-          CONFIG_PACKAGE_kmod-fs-squashfs=y
+          CONFIG_TARGET_ROOTFS_PARTSIZE=384
           EOF
 
           # USB3.0支持:
@@ -182,8 +182,8 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
-          # CONFIG_PACKAGE_luci-theme-rosy=y
-          # CONFIG_PACKAGE_luci-theme-atmaterial=y
+          CONFIG_PACKAGE_luci-theme-rosy=y
+          CONFIG_PACKAGE_luci-theme-atmaterial=y
           EOF
 
           # 常用软件包:
